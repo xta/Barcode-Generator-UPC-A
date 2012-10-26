@@ -3,4 +3,4 @@
 
 by @rexfeng
 
-originally published at http://cssdeck.com/labs/css-barcode-upc-a-generator 2012
+originally published at http://cssdeck.com/labs/css-barcode-upc-a-generator 2012 
