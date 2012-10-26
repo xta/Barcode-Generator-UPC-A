@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+	<title>CSS Barcode</title>
+	<link rel="stylesheet" href="./custom.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+	<script type="text/javascript" src="./barcodegen.js"></script>
+</head>
+<body>
+<div id="red-strike"></div>
+<div id="upc-a">
+<div id="upc-wrap">
+<!-- the CSS structure is odd due to: http://stackoverflow.com/questions/5256533/a-space-between-inline-block-list-items -->
+<!-- begin UPC -->
+<div 
+class="m e long"></div><div 
+class="m o long"></div><div 
+class="m e long"></div><!--
+Quiet Zone
+--><div class="l"><!-- 
+begin L --><div 
+
+	id="l1"><div
+
+		class="m o"></div><div 
+		class="m o"></div><div 
+		class="m o"></div><div 
+		class="m e"></div><div 
+		class="m e"></div><div 
+		class="m o"></div><div 
+		class="m e"><!--
+
+	--></div></div><div 
+	id="l2"><div
+
+		class="m o"></div><div 
+		class="m o"></div><div 
+		class="m e"></div><div 
+		class="m o"></div><div 
+		class="m o"></div><div 
+		class="m e"></div><div 
+		class="m e"><!--
+
+	--></div></div><div 
+	id="l3"><div
+	
+		class="m o"></div><div 
+		class="m o"></div><div 
+		class="m o"></div><div 
+		class="m e"></div><div 
+		class="m e"></div><div 
+		class="m o"></div><div 
+		class="m e"><!--
+
+	--></div></div><div 
+	id="l4"><div
+
+		class="m o"></div><div 
+		class="m e"></div><div 
+		class="m o"></div><div 
+		class="m e"></div><div 
+		class="m e"></div><div 
+		class="m e"></div><div 
+		class="m e"><!--
+
+	--></div></div><div 
+	id="l5"><div
+
+		class="m o"></div><div 
+		class="m o"></div><div 
+		class="m e"></div><div 
+		class="m o"></div><div 
+		class="m o"></div><div 
+		class="m e"></div><div 
+		class="m e"><!--
+
+	--></div></div><div 
+	id="l6"><div
+
+		class="m o"></div><div 
+		class="m e"></div><div 
+		class="m o"></div><div 
+		class="m e"></div><div 
+		class="m e"></div><div 
+		class="m e"></div><div 
+		class="m e"><!--
+
+end L -->
+</div></div></div><!--
+begin M
+--><div 
+class="m o long"></div><div 
+class="m e long"></div><div 
+class="m o long"></div><div 
+class="m e long"></div><div 
+class="m o long"></div><!--
+end M
+--><div class="r"><!-- 
+begin R --><div 
+
+	id="r1"><div
+
+		class="m o"></div><div 
+		class="m e"></div><div 
+		class="m e"></div><div 
+		class="m e"></div><div 
+		class="m o"></div><div 
+		class="m e"></div><div 
+		class="m e"><!--
+
+	--></div></div><div 
+	id="r2"><div
+
+		class="m o"></div><div 
+		class="m o"></div><div 
+		class="m e"></div><div 
+		class="m o"></div><div 
+		class="m o"></div><div 
+		class="m e"></div><div 
+		class="m e"><!--
+
+	--></div></div><div 
+	id="r3"><div
+
+		class="m o"></div><div 
+		class="m e"></div><div 
+		class="m e"></div><div 
+		class="m o"></div><div 
+		class="m e"></div><div 
+		class="m e"></div><div 
+		class="m e"><!--
+
+	--></div></div><div 
+	id="r4"><div
+
+		class="m o"></div><div 
+		class="m e"></div><div 
+		class="m e"></div><div 
+		class="m e"></div><div 
+		class="m e"></div><div 
+		class="m o"></div><div 
+		class="m e"><!--
+
+	--></div></div><div 
+	id="r5"><div
+
+		class="m o"></div><div 
+		class="m e"></div><div 
+		class="m e"></div><div 
+		class="m o"></div><div 
+		class="m e"></div><div 
+		class="m e"></div><div 
+		class="m e"><!--
+
+	--></div></div><div 
+	id="r6"><div
+
+		class="m o"></div><div 
+		class="m e"></div><div 
+		class="m o"></div><div 
+		class="m e"></div><div 
+		class="m e"></div><div 
+		class="m e"></div><div 
+		class="m e"><!--
+
+end R 
+--></div></div></div><!--
+Quiet Zone
+--><div 
+class="m e long"></div><div 
+class="m o long"></div><div 
+class="m e long"></div>
+<!-- end UPC -->		
+</div><!-- end upc-wrap -->
+
+<div id="l-digits" class="digits">20626</div>
+<div id="r-digits" class="digits">72838</div>
+</div><!-- end upc-a -->
+
+<div id="query">
+	Type barcode #: <input id="barcodenum" type="text" name="barcodenum" maxlength="11" />
+
+	<p class="instructions">
+		<strong>UPC-A barcodes</strong> have 12 digits.
+	</p>
+	<p>
+ 		<a href="http://en.wikipedia.org/wiki/Universal_Product_Code">First digit is UPC code type. Next five is manufacturer number. The next five is product number. Last digit is calculated checksum.</a>
+	</p>
+	<p>
+		This barcode generator takes 11 digits and prints 10 digits (5 manufacturer and 5 product number) below. The last digit is automatically calculated. All 12 digits are reflected in the barcode graphic.
+	</p>
+	<p id="result">
+		You entered <span id="entered_bc">x</span>. The checksum digit was <span id="calc_check">y</span>. Your barcode above is encoded as <span id="all_digits">z</span>.
+	</p>
+</div>
+
+</body>
+</html>
